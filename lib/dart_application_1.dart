@@ -18,15 +18,15 @@ int romanToInt(String s) {
   return result;
 }
 
-String longestCommonPrefix(List<String> strs) {
-  String longestCommonPrefix = strs[0];
-  for (int i = 1; i < strs.length; i++) {
-    int maxSize = longestCommonPrefix.length < strs[i].length
+String longestCommonPrefix(List<String> listOfString) {
+  String longestCommonPrefix = listOfString[0];
+  for (int i = 1; i < listOfString.length; i++) {
+    int maxSize = longestCommonPrefix.length < listOfString[i].length
         ? longestCommonPrefix.length
-        : strs[i].length;
+        : listOfString[i].length;
     String tmp = '';
     for (int j = 0; j < maxSize; j++) {
-      if (longestCommonPrefix[j] == strs[i][j]) {
+      if (longestCommonPrefix[j] == listOfString[i][j]) {
         tmp += longestCommonPrefix[j];
       } else {
         break;
