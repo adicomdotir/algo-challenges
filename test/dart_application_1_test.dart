@@ -15,5 +15,8 @@ void main() {
   test('gcd', () {
     expect(calculateGCD(30, 12), 6);
     expect(calculateGCD(516, 186), 6);
+
+    expect(calculateFastGCD(30, 12), calculateGCD(30, 12));
+    expect(calculateFastGCD(516, 186), calculateGCD(30, 12));
   });
 }

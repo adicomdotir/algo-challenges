@@ -7,3 +7,11 @@ int calculateGCD(int a, int b) {
   }
   return best;
 }
+
+int calculateFastGCD(int a, int b) {
+  if (b == 0) {
+    return a;
+  }
+  int res = a % b;
+  return calculateFastGCD(b, res);
+}
