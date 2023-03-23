@@ -19,4 +19,9 @@ void main() {
     expect(calculateFastGCD(30, 12), calculateGCD(30, 12));
     expect(calculateFastGCD(516, 186), calculateGCD(30, 12));
   });
+
+  test('binary search', () {
+    expect(binarySearch([1, 3, 5, 7, 9], 0, 4, 1), 0);
+    expect(binarySearch([1, 3, 5, 7, 9], 0, 4, 10), -1);
+  });
 }

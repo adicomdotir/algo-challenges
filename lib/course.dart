@@ -15,3 +15,22 @@ int calculateFastGCD(int a, int b) {
   int res = a % b;
   return calculateFastGCD(b, res);
 }
+
+int binarySearch(
+  List<int> listOfNumbers,
+  int lowerBound,
+  int upperBound,
+  int x,
+) {
+  if (lowerBound > upperBound) {
+    return -1;
+  }
+
+  int middleIndex = (lowerBound + upperBound) ~/ 2;
+  if (listOfNumbers[middleIndex] > x) {
+    return binarySearch(listOfNumbers, lowerBound, middleIndex, x);
+  } else if (listOfNumbers[middleIndex] < x) {
+    return binarySearch(listOfNumbers, middleIndex + 1, upperBound, x);
+  }
+  return middleIndex;
+}
